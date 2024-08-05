@@ -7,7 +7,7 @@
 
 html {
   font-size: 18px;
-  font-size: calc(15px + (18 - 15) * (100vw - 640px) / (1280 - 640));
+  font-size: calc(16px + (18 - 16) * (100vw - 640px) / (1280 - 640));
 }
 
 *,
