@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 html {
   font-size: 18px;
+  font-size: calc(15px + (18 - 15) * (100vw - 640px) / (1280 - 640));
 }
 
 *,
@@ -7,11 +15,16 @@ html {
   color: #444444;
   margin: 0;
   padding: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  box-sizing: border-box;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,17 +81,25 @@ footer .logo {
 
 footer {
   margin: 4em 0 2em;
+  display: -ms-grid;
   display: grid; 
   grid-auto-flow: column; 
+  -ms-grid-columns: 0.16fr 0px 1fr; 
   grid-template-columns: 0.16fr 1fr; 
+  -ms-grid-rows: 1fr; 
   grid-template-rows: 1fr; 
   gap: 0px 0px; 
-  grid-template-areas: 
+      grid-template-areas: 
     ". ."; 
-  justify-content: stretch; 
-  align-content: center; 
+  -webkit-box-pack: stretch; 
+      -ms-flex-pack: stretch; 
+          justify-content: stretch; 
+  -ms-flex-line-pack: center; 
+      align-content: center; 
   justify-items: stretch; 
-  align-items: center;
+  -webkit-box-align: center; 
+      -ms-flex-align: center; 
+          align-items: center;
   width: 100%; 
 }
 
@@ -112,10 +133,17 @@ figure {
 }
 
 .flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   /* flex-flow: row; */
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height: 100%;
 }
 
@@ -134,6 +162,8 @@ a.mybutton {
   padding: 1em 1.618em;
   border-radius: 0.618em;
   margin: 0 0 0.618em 0;
+  -webkit-transition: background 0.25s, padding 0.25s;
+  -o-transition: background 0.25s, padding 0.25s;
   transition: background 0.25s, padding 0.25s;
 }
 
@@ -151,13 +181,19 @@ a.mybutton:hover, a.mybutton:focus {
 
 .item1 {
   /* flex:1 1 auto; */
-  flex-grow: 1;
-  align-self: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .item2 {
   /* flex:0 1 auto; */
-  align-self: stretch;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .icon {
