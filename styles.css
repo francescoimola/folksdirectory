@@ -171,6 +171,7 @@ a.mybutton:hover, a.mybutton:focus {
   background: #f1f1f1f1;
   cursor: pointer;
   padding: 1em 2em; 
+  outline: 2px solid #444444;
 }
 
 .flex-container > div,
