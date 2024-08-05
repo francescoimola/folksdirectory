@@ -168,6 +168,7 @@ a.mybutton:hover, a.mybutton:focus {
 .mybutton .logo {
   max-width: 6em;
   height: auto;
+  object-size: contain;
   margin: 0;
   padding: 0;
 }
