@@ -198,6 +198,7 @@ a.mybutton:hover, a.mybutton:focus {
 }
 
 .icon {
+  min-width: 1em;
   max-width: 1em;
   height: auto;
 }
