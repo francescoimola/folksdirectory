@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +9,7 @@
     />
     <title>Folks Directory</title>
     <meta name="title" content="Folks Directory" />
-    <meta name="description" content="Independent directory helping you discover and connect with creatives in Folkestone." />
+    <meta name="description" content="Folkestone’s growing yellow pages for artists and creatives." />
     <meta
       name="keywords"
       content="directory, folkestone, yellow pages, creatives, south kent, collaboration, community, kent, database, resource"
@@ -16,21 +17,13 @@
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="English" />
-    <meta name="author" content="Lauren O'Hara and Francesco Imola" />
-    
+    <meta name="author" content="Francesco Imola, Sangmin Cha, Jenny Davis" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:url" content="https://folks.directory" />
     <meta property="og:title" content="Folks Directory" />
-    <meta property="og:description" content="Independent directory helping you discover and connect with creatives in Folkestone." />
-    <meta property="og:image" content="Meta image.png" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://metatags.io/" />
-    <meta property="twitter:title" content="Folks Directory" />
-    <meta property="twitter:description" content="Independent directory helping you discover and connect with creatives in Folkestone." />
-    <meta property="twitter:image" content="Meta image.png" />
+    <meta property="og:description" content="Folkestone’s growing yellow pages for artists and creatives." />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,13 +44,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Logo -->
-    <figure class="mybutton">
+    <figure class="logo">
       <img
         src="./Logo by itself (Blue).png"
-        alt="folks directory logo"
-        class="logo"
+        alt="Folks Directory - connecting creatives in Folkestone"
         loading="lazy"
+        width="103"
+        height="34"
       />
     </figure>
 
@@ -74,25 +71,28 @@
     </header>
 
     <!-- Links to directory and submission form -->
-    <main>
+    <main id="main-content">
       <a
         class="mybutton"
         href="https://folksdirectory.notion.site/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Visit the directory to connect with local creatives (opens in new tab)"
       >
-        <div class="flex-container">
-          <div class="item1">
+        <div class="button-container">
+          <div>
             <h2>Visit the directory</h2>
             <aside>Connect with local creatives</aside>
           </div>
           <svg
-            class="item2 icon"
+            class="icon"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewbox="0 0 24 24"
             stroke-width="1.5"
             stroke="#444444"
+            role="img"
+            aria-label="External link arrow"
           >
             <path
               stroke-linecap="round"
@@ -107,19 +107,22 @@
         href="https://forms.gle/WPD1qBayDwzD6YH9A"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Join as a creative by submitting your details (opens in new tab)"
       >
-        <div class="flex-container">
-          <div class="item1">
+        <div class="button-container">
+          <div>
             <h2>Join as a creative</h2>
             <aside>Submit your details here</aside>
           </div>
           <svg
-            class="item2 icon"
+            class="icon"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewbox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
+            role="img"
+            aria-label="External link arrow"
           >
             <path
               stroke-linecap="round"
@@ -138,6 +141,5 @@
         </p>
       </section>
     </footer>
-    <!-- End of body -->
   </body>
 </html>
