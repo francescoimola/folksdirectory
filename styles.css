@@ -141,7 +141,7 @@ a:focus {
   align-self: stretch;
 }
 
-.logo {
+.logo, header {
   margin-bottom: 1.618rem;
 }
 
