@@ -195,8 +195,14 @@ small {
   suffix: " ";
 }
 
-ul {
+ul.route{
 	list-style: line inside;
+  li{
+    margin-top: $space-sm;
+    }
+  li>strong {
+    font-weight: $font-semibold;
+  }
 }
 
 // ========================================
@@ -328,12 +334,9 @@ footer {
   justify-content: flex-start;
   align-items: flex-start;
   gap: $space-sm;
-  p {
-    margin-bottom: 0;
-  }
   margin-bottom: $space-2xl;
 
-  small {
+  li>*{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -341,8 +344,8 @@ footer {
     gap: $space-base;
 
     span {
-      min-width: $space-md;
-	  text-align: center;
+      width: $space-md;
+	    text-align: center;
     }
   }
 }

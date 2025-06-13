@@ -143,8 +143,14 @@ small {
   symbols: "–";
   suffix: " ";
 }
-ul {
+ul.route {
   list-style: line inside;
+}
+ul.route li {
+  margin-top: 0.375rem;
+}
+ul.route li > strong {
+  font-weight: 728;
 }
 
 a {
@@ -259,18 +265,15 @@ footer * {
   gap: 0.375rem;
   margin-bottom: 2.618rem;
 }
-.eventdetails p {
-  margin-bottom: 0;
-}
-.eventdetails small {
+.eventdetails li > * {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: baseline;
   gap: 1rem;
 }
-.eventdetails small span {
-  min-width: 0.625rem;
+.eventdetails li > * span {
+  width: 0.625rem;
   text-align: center;
 }
 
