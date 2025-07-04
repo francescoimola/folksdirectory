@@ -41,6 +41,10 @@ $transition-slow: 0.3s;
 $focus-width: 0.125rem; // 2px
 $focus-offset: 0.125rem; // 2px
 
+@view-transition {
+  navigation: auto;
+}
+
 // ========================================
 // RESET STYLES
 // ========================================
@@ -139,7 +143,8 @@ body {
 }
 
 .pad-sides {
-  padding: 0 clamp(0px, calc(#{$space-base} - (100vw - 320px) * 0.1), #{$space-base});
+  padding-right: clamp(0px, calc(#{$space-base} - (100vw - 320px) * 0.1), #{$space-base});
+  padding-left: clamp(0px, calc(#{$space-base} - (100vw - 320px) * 0.1), #{$space-base});
 }
 
 .pad-bottom {
@@ -317,7 +322,6 @@ img {
 }
 
 footer {
-  margin: $space-3xl 0 $space-xl;
   opacity: 75%;
   font-weight: $font-light;
   margin-bottom: 0;
@@ -409,11 +413,21 @@ button:focus {
   background-color: $color-background;
   border-top: $focus-width solid $color-text;
 
-  header > img {
+  header img {
     margin: -$space-3xl 0 $space-2xl -5px;
     width: calc($space-xl * 10);
     height: auto;
   }
+
+  header img.homepage-logo {
+    margin: 0 0 $space-md 0;
+    width: calc($space-xl * 6);
+  }
+
+  header p:last-of-type {
+    margin-bottom: 0;
+  }
+
 }
 
 // ========================================

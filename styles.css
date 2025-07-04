@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@view-transition {
+  navigation: auto;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -94,7 +97,8 @@ body {
 }
 
 .pad-sides {
-  padding: 0 clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
+  padding-right: clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
+  padding-left: clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
 }
 
 .pad-bottom {
@@ -247,7 +251,6 @@ img.banner {
 }
 
 footer {
-  margin: 4rem 0 2rem;
   opacity: 75%;
   font-weight: 400;
   margin-bottom: 0;
@@ -325,10 +328,17 @@ button:focus {
   background-color: hsl(0, 0%, 98%);
   border-top: 0.125rem solid #444444;
 }
-.content-wrapper header > img {
+.content-wrapper header img {
   margin: -4rem 0 2.618rem -5px;
   width: 20rem;
   height: auto;
+}
+.content-wrapper header img.homepage-logo {
+  margin: 0 0 0.625rem 0;
+  width: 12rem;
+}
+.content-wrapper header p:last-of-type {
+  margin-bottom: 0;
 }
 
 @media (prefers-contrast: high) {
