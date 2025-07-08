@@ -320,6 +320,17 @@ a {
   }
 }
 
+button {
+  padding-block: 0;
+  padding-inline: 0;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+}
+
 // ========================================
 // BUTTONS & COMPONENTS
 // ========================================
@@ -407,6 +418,27 @@ a {
 
   p {
     margin: 0;
+  }
+
+  .checkout-button {
+    border-bottom: none;
+    display: inline-block;
+    background: $color-text;
+    color: $color-background;
+    font-size: inherit;
+    font-family: inherit;
+    margin: $space-lg 0 $space-sm 0;
+    padding: $space-sm $space-base;
+    border-radius: $radius-lg;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-background;
+    }
+  }
+
+  small {
+    display: inline-block;
   }
 }
 

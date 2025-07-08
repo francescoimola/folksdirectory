@@ -254,6 +254,18 @@ a:focus {
   outline-offset: 0.125rem;
 }
 
+button {
+  padding-block: 0;
+  padding-inline: 0;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  -o-border-image: none;
+     border-image: none;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
 .mybutton {
   display: block;
   border-bottom: none;
@@ -326,6 +338,24 @@ a:focus {
 }
 .highlight p {
   margin: 0;
+}
+.highlight .checkout-button {
+  border-bottom: none;
+  display: inline-block;
+  background: #444444;
+  color: hsl(0, 0%, 98%);
+  font-size: inherit;
+  font-family: inherit;
+  margin: 1.618rem 0 0.375rem 0;
+  padding: 0.375rem 1rem;
+  border-radius: 1.618rem;
+}
+.highlight .checkout-button:hover {
+  background: #00a8cf;
+  color: hsl(0, 0%, 98%);
+}
+.highlight small {
+  display: inline-block;
 }
 
 figure,
