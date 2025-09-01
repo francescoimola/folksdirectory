@@ -480,7 +480,7 @@ img {
   }
 }
 
-footer *, small {
+footer p, small {
   font-weight: $font-light;
   font-size: 0.7937rem;
 }
@@ -488,7 +488,9 @@ footer *, small {
 footer {
   opacity: 75%;
   margin-bottom: 0;
-
+  stong {
+    font-weight: $font-medium;
+  }
   * {
     margin-bottom: $space-sm;
   }

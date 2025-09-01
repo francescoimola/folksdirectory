@@ -395,7 +395,7 @@ img.banner {
   top: 0;
 }
 
-footer *, small {
+footer p, small {
   font-weight: 400;
   font-size: 0.7937rem;
 }
@@ -403,6 +403,9 @@ footer *, small {
 footer {
   opacity: 75%;
   margin-bottom: 0;
+}
+footer stong {
+  font-weight: 589;
 }
 footer * {
   margin-bottom: 0.375rem;
