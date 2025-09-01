@@ -338,17 +338,19 @@ button {
   display: block;
   border-bottom: none;
   background: $color-accent;
-  padding: 1rem $radius-lg;
+  padding: $space-lg;
   border-radius: $radius-base;
-  margin: 0 0 $radius-base 0;
-  transition: background $transition-normal, padding $transition-normal;
+  margin: 0 0 $space-md 0;
+  outline: $focus-width solid transparent;
+  outline-offset: $focus-offset;
+  transition: background $transition-slow, padding $transition-slow, outline-color $transition-normal;
+  transition-delay: 150ms;
 
   &:focus {
     background: $color-surface;
     cursor: pointer;
-    padding: 1rem $space-xl;
-    outline: $focus-width solid $color-focus;
-    outline-offset: $focus-offset;
+    padding: $space-lg;
+    outline-color: $color-focus;
   }
 }
 
@@ -391,7 +393,7 @@ button {
 
     h2 {
       font-size: 1rem;
-      margin: 0 0 $space-xs 0;
+      margin: 0 0 0 0;
     }
   }
 
@@ -599,8 +601,9 @@ button:focus {
   .mybutton:hover {
     background: $color-surface;
     cursor: pointer;
-    padding: 1rem $space-xl;
-    outline: $focus-width solid $color-text;
+    padding-top: calc($space-lg - 0.375rem);
+    padding-bottom: calc($space-lg - 0.375rem);
+    outline-color: $color-black;
   }
 }
 

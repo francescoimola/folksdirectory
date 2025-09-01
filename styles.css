@@ -268,17 +268,19 @@ button {
   display: block;
   border-bottom: none;
   background: #ffe9d0;
-  padding: 1rem 1.618rem;
+  padding: 1.618rem;
   border-radius: 0.618rem;
-  margin: 0 0 0.618rem 0;
-  transition: background 0.25s, padding 0.25s;
+  margin: 0 0 0.625rem 0;
+  outline: 0.125rem solid transparent;
+  outline-offset: 0.125rem;
+  transition: background 0.3s, padding 0.3s, outline-color 0.25s;
+  transition-delay: 150ms;
 }
 .mybutton:focus {
   background: rgba(241, 241, 241, 0.9450980392);
   cursor: pointer;
-  padding: 1rem 2rem;
-  outline: 0.125rem solid #00a8cf;
-  outline-offset: 0.125rem;
+  padding: 1.618rem;
+  outline-color: #00a8cf;
 }
 
 .logo {
@@ -318,7 +320,7 @@ button {
 }
 .button-container > div h2 {
   font-size: 1rem;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0 0;
 }
 .button-container > svg {
   align-self: stretch;
@@ -489,8 +491,9 @@ button:focus {
   .mybutton:hover {
     background: rgba(241, 241, 241, 0.9450980392);
     cursor: pointer;
-    padding: 1rem 2rem;
-    outline: 0.125rem solid #444444;
+    padding-top: 1.243rem;
+    padding-bottom: 1.243rem;
+    outline-color: #000000;
   }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-contrast: high) {
