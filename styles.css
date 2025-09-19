@@ -142,15 +142,10 @@ html {
   font-size: clamp(0.9rem, 0.7rem + 0.4vw, 1.125rem);
 }
 
-*,
-html {
+* {
   color: #444444;
   margin: 0;
   padding: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
   box-sizing: border-box;
   font-smoothing: antialiased;
 }
@@ -164,36 +159,6 @@ body {
   letter-spacing: -0.001rem;
 }
 
-.center {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.short-width {
-  max-width: clamp(26rem, 1vw + 1rem, 30rem);
-}
-
-.medium-width {
-  max-width: clamp(40rem, 2vw + 1rem, 50rem);
-}
-
-.pad-top {
-  padding-top: 2.618rem;
-}
-
-.pad-sides {
-  padding-right: clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
-  padding-left: clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
-}
-
-.pad-bottom {
-  padding-bottom: 2rem;
-}
-
-main.hp-btt-wrapper {
-  margin-top: 2rem;
-}
-
 h1 {
   font-size: 2rem;
   margin: 0 0 0.618rem 0;
@@ -201,11 +166,10 @@ h1 {
   font-weight: 728;
   color: #444444;
   letter-spacing: -0.07rem;
-  line-height: 100%;
+  line-height: 1;
 }
 
-h2,
-h3 {
+h2, h3 {
   font-size: 1.5874rem;
   font-weight: 589;
   margin: 1.618rem 0 0.25rem;
@@ -229,6 +193,11 @@ strong {
 
 i {
   font-style: italic;
+}
+
+small, footer p, .dir-intro p {
+  font-weight: 400;
+  font-size: 0.7937rem;
 }
 
 @counter-style line {
@@ -264,34 +233,29 @@ a:focus {
 }
 
 button {
-  padding-block: 0;
-  padding-inline: 0;
-  border-width: 0;
-  border-style: none;
-  border-color: none;
-  -o-border-image: none;
-     border-image: none;
+  padding: 0;
+  border: 0;
   cursor: pointer;
   transition: all 0.25s;
 }
-
-.mybutton {
-  display: block;
-  border-bottom: none;
-  background: #ffe9d0;
-  padding: 1.618rem;
-  border-radius: 0.618rem;
-  margin: 0 0 0.625rem 0;
-  outline: 0.125rem solid transparent;
+button:focus {
+  outline: 0.125rem solid #00a8cf;
   outline-offset: 0.125rem;
-  transition: background 0.25s, padding 0.25s, outline-color 0.25s;
-  transition-delay: 100ms;
 }
-.mybutton:focus {
-  background: rgba(241, 241, 241, 0.9450980392);
-  cursor: pointer;
-  padding: 1.618rem;
-  outline-color: #00a8cf;
+
+main.hp-btt-wrapper {
+  margin-top: 2rem;
+}
+
+footer, .dir-intro {
+  opacity: 75%;
+  margin-bottom: 0;
+}
+footer stong, .dir-intro stong {
+  font-weight: 589;
+}
+footer *, .dir-intro * {
+  margin-bottom: 0.375rem;
 }
 
 .logo {
@@ -310,6 +274,60 @@ button {
      object-fit: scale-down;
 }
 
+figure, .img-container, img {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0.25rem;
+}
+
+img.banner {
+  border-radius: 0;
+  aspect-ratio: 64/27;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 100% 50%;
+     object-position: 100% 50%;
+  position: sticky;
+  z-index: -1;
+  top: 0;
+}
+
+.icon {
+  min-width: 1rem;
+  max-width: 1rem;
+  height: auto;
+  stroke: #333333;
+}
+
+.rotated-icon {
+  display: inline-block;
+  transform: rotate(-45deg);
+  margin: 0 0.25rem;
+}
+
+.mybutton {
+  display: block;
+  border-bottom: none;
+  background: #ffe9d0;
+  padding: 1.618rem;
+  border-radius: 0.618rem;
+  margin: 0 0 0.625rem;
+  outline: 0.125rem solid transparent;
+  outline-offset: 0.125rem;
+  transition: background 0.25s, padding 0.25s, outline-color 0.25s;
+  transition-delay: 100ms;
+}
+.mybutton:focus {
+  background: rgba(241, 241, 241, 0.9450980392);
+  cursor: pointer;
+  padding: 1.618rem;
+  outline-color: #00a8cf;
+}
+
 .button-container {
   display: flex;
   align-items: space-between;
@@ -320,8 +338,7 @@ button {
   opacity: 80%;
   max-width: 90%;
 }
-.button-container > div,
-.button-container > svg {
+.button-container > div, .button-container > svg {
   padding: 0;
   margin: 0;
 }
@@ -331,7 +348,7 @@ button {
 }
 .button-container > div h2 {
   font-size: 1rem;
-  margin: 0 0 0 0;
+  margin: 0;
 }
 .button-container > svg {
   align-self: stretch;
@@ -358,8 +375,8 @@ button {
   color: hsl(0, 0%, 98%);
   font-size: inherit;
   font-family: inherit;
-  margin: 1rem 0 0.625rem 0;
-  padding: 0.375rem 1rem 0.475rem 1rem;
+  margin: 1rem 0 0.625rem;
+  padding: 0.375rem 1rem 0.475rem;
   border-radius: 0.618rem;
 }
 .highlight .checkout-button:hover {
@@ -369,46 +386,6 @@ button {
 .highlight small {
   display: inline-block;
   opacity: 90%;
-}
-
-figure,
-.img-container,
-img {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  border-radius: 0.25rem;
-}
-
-img.banner {
-  border-radius: 0;
-  aspect-ratio: 64/27;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 100% 50%;
-     object-position: 100% 50%;
-  position: sticky;
-  z-index: -1;
-  top: 0;
-}
-
-footer p, small {
-  font-weight: 400;
-  font-size: 0.7937rem;
-}
-
-footer {
-  opacity: 75%;
-  margin-bottom: 0;
-}
-footer stong {
-  font-weight: 589;
-}
-footer * {
-  margin-bottom: 0.375rem;
 }
 
 .eventdetails {
@@ -431,11 +408,63 @@ footer * {
   text-align: center;
 }
 
-.icon {
-  min-width: 1rem;
-  max-width: 1rem;
+.content-wrapper {
+  background-color: hsl(0, 0%, 98%);
+  border-top: 0.125rem solid #444444;
+}
+.content-wrapper header img {
+  margin: -4rem 0 2.618rem -5px;
+  width: 20rem;
   height: auto;
-  stroke: #333333;
+}
+.content-wrapper header img.homepage-logo {
+  margin: 0 0 0.625rem 0;
+  width: 12rem;
+}
+.content-wrapper header p:last-of-type {
+  margin-bottom: 0;
+}
+
+.dir-container {
+  padding: 2rem !important;
+}
+.dir-container iframe {
+  border: 1px solid rgb(0, 102, 63);
+  border-radius: 0.618rem;
+}
+
+.dir-actions > ul li {
+  margin-bottom: 0.375rem;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.short-width {
+  max-width: clamp(26rem, 1vw + 1rem, 30rem);
+}
+
+.medium-width {
+  max-width: clamp(40rem, 2vw + 1rem, 50rem);
+}
+
+.pad-top {
+  padding-top: 2.618rem;
+}
+
+.pad-sides {
+  padding-right: clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
+  padding-left: clamp(0px, 1rem - (100vw - 320px) * 0.1, 1rem);
+}
+
+.pad-bottom {
+  padding-bottom: 2rem;
+}
+
+.no-border {
+  border: none;
 }
 
 .skip-link {
@@ -458,11 +487,6 @@ footer * {
   outline-offset: 0.125rem;
 }
 
-button:focus {
-  outline: 0.125rem solid #00a8cf;
-  outline-offset: 0.125rem;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -475,35 +499,6 @@ button:focus {
   border: 0;
 }
 
-.content-wrapper {
-  background-color: hsl(0, 0%, 98%);
-  border-top: 0.125rem solid #444444;
-}
-.content-wrapper header img {
-  margin: -4rem 0 2.618rem -5px;
-  width: 20rem;
-  height: auto;
-}
-.content-wrapper header img.homepage-logo {
-  margin: 0 0 0.625rem 0;
-  width: 12rem;
-}
-.content-wrapper header p:last-of-type {
-  margin-bottom: 0;
-}
-
-.no-border {
-  border: none;
-}
-
-@media (prefers-contrast: high) {
-  .icon {
-    stroke: #000000;
-  }
-  .mybutton:focus {
-    outline: 0.1875rem solid #000000;
-  }
-}
 @media (hover: hover) and (pointer: fine) {
   a:hover {
     border-bottom: 0;
@@ -515,6 +510,14 @@ button:focus {
     padding-top: 1.243rem;
     padding-bottom: 1.243rem;
     outline-color: #000000;
+  }
+}
+@media (prefers-contrast: high) {
+  .icon {
+    stroke: #000000;
+  }
+  .mybutton:focus {
+    outline: 0.1875rem solid #000000;
   }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-contrast: high) {

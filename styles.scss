@@ -1,5 +1,5 @@
 // ========================================
-// DESIGN TOKENS
+// DESIGN TOKENS & VARIABLES
 // ========================================
 
 // Spacing scale - Golden Ratio (1.618)
@@ -40,6 +40,10 @@ $transition-normal: 0.25s;
 $transition-slow: 0.3s;
 $focus-width: 0.125rem; // 2px
 $focus-offset: 0.125rem; // 2px
+
+// ========================================
+// VENDOR SPECIFIC
+// ========================================
 
 @view-transition {
   navigation: auto;
@@ -142,6 +146,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -156,9 +161,11 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
@@ -168,6 +175,7 @@ blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -175,6 +183,7 @@ q:after {
   content: '';
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -189,15 +198,10 @@ html {
   font-size: clamp(0.9rem, 0.7rem + 0.4vw, 1.125rem);
 }
 
-*,
-html {
+* {
   color: $color-text;
   margin: 0;
   padding: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
   box-sizing: border-box;
   font-smoothing: antialiased;
 }
@@ -211,46 +215,6 @@ body {
   letter-spacing: -0.001rem;
 }
 
-.center {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.short-width {
-  max-width: clamp(26rem, 1vw + 1rem, 30rem);
-}
-
-.medium-width {
-  max-width: clamp(40rem, 2vw + 1rem, 50rem);
-}
-
-.pad-top {
-  padding-top: $space-2xl;
-}
-
-.pad-sides {
-  padding-right: clamp(
-    0px,
-    calc(#{$space-base} - (100vw - 320px) * 0.1),
-    #{$space-base}
-  );
-  padding-left: clamp(
-    0px,
-    calc(#{$space-base} - (100vw - 320px) * 0.1),
-    #{$space-base}
-  );
-}
-
-.pad-bottom {
-  padding-bottom: $space-xl;
-}
-
-main {
-  &.hp-btt-wrapper {
-    margin-top: $space-xl;
-  }
-}
-
 // ========================================
 // TYPOGRAPHY
 // ========================================
@@ -262,11 +226,10 @@ h1 {
   font-weight: $font-semibold;
   color: $color-text;
   letter-spacing: -0.07rem;
-  line-height: 100%;
+  line-height: 1;
 }
 
-h2,
-h3 {
+h2, h3 {
   font-size: 1.5874rem;
   font-weight: $font-medium;
   margin: $space-lg 0 $space-xs;
@@ -292,6 +255,15 @@ i {
   font-style: italic;
 }
 
+small, footer p, .dir-intro p {
+  font-weight: $font-light;
+  font-size: 0.7937rem;
+}
+
+// ========================================
+// LISTS
+// ========================================
+
 @counter-style line {
   system: symbolic;
   symbols: '\2013';
@@ -313,7 +285,6 @@ ol.marked-list {
   list-style: decimal inside;
 }
 
-
 // ========================================
 // LINKS & INTERACTIVE ELEMENTS
 // ========================================
@@ -332,40 +303,37 @@ a {
 }
 
 button {
-  padding-block: 0;
-  padding-inline: 0;
-  border-width: 0;
-  border-style: none;
-  border-color: none;
-  border-image: none;
+  padding: 0;
+  border: 0;
   cursor: pointer;
   transition: all $transition-normal;
-}
-
-// ========================================
-// BUTTONS & COMPONENTS
-// ========================================
-
-.mybutton {
-  display: block;
-  border-bottom: none;
-  background: $color-accent;
-  padding: $space-lg;
-  border-radius: $radius-base;
-  margin: 0 0 $space-md 0;
-  outline: $focus-width solid transparent;
-  outline-offset: $focus-offset;
-  transition: background $transition-normal, padding $transition-normal, outline-color $transition-normal;
-  transition-delay: 100ms;
-
+  
   &:focus {
-    background: $color-surface;
-    cursor: pointer;
-    padding: $space-lg;
-    outline-color: $color-focus;
+    outline: $focus-width solid $color-focus;
+    outline-offset: $focus-offset;
   }
 }
 
+// ========================================
+// LAYOUT
+// ========================================
+
+main.hp-btt-wrapper {
+  margin-top: $space-xl;
+}
+
+footer, .dir-intro {
+  opacity: 75%;
+  margin-bottom: 0;
+  stong { font-weight: $font-medium; }
+  * { margin-bottom: $space-sm; }
+}
+
+// ========================================
+// COMPONENTS
+// ========================================
+
+// Logo Component
 .logo {
   display: flex;
   flex-direction: column;
@@ -382,6 +350,62 @@ button {
   }
 }
 
+// Images & Media
+figure, .img-container, img {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: $radius-sm;
+}
+
+img.banner {
+  border-radius: 0;
+  aspect-ratio: 64 / 27;
+  object-fit: cover;
+  object-position: 100% 50%;
+  position: sticky;
+  z-index: -1;
+  top: 0;
+}
+
+// Icon Component
+.icon {
+  min-width: 1rem;
+  max-width: 1rem;
+  height: auto;
+  stroke: #333333; // Improved contrast
+}
+
+.rotated-icon {
+  display: inline-block;
+  transform: rotate(-45deg);
+  margin: 0 $space-xs;
+}
+
+// Button Component
+.mybutton {
+  display: block;
+  border-bottom: none;
+  background: $color-accent;
+  padding: $space-lg;
+  border-radius: $radius-base;
+  margin: 0 0 $space-md;
+  outline: $focus-width solid transparent;
+  outline-offset: $focus-offset;
+  transition: background $transition-normal, padding $transition-normal, outline-color $transition-normal;
+  transition-delay: 100ms;
+
+  &:focus {
+    background: $color-surface;
+    cursor: pointer;
+    padding: $space-lg;
+    outline-color: $color-focus;
+  }
+}
+
+// Button Container Component
 .button-container {
   display: flex;
   align-items: space-between;
@@ -393,8 +417,7 @@ button {
     max-width: 90%;
   }
 
-  > div,
-  > svg {
+  > div, > svg {
     padding: 0;
     margin: 0;
   }
@@ -402,10 +425,9 @@ button {
   > div {
     flex: 1 1 auto;
     align-self: flex;
-
     h2 {
       font-size: 1rem;
-      margin: 0 0 0 0;
+      margin: 0;
     }
   }
 
@@ -414,10 +436,7 @@ button {
   }
 }
 
-// ========================================
-// LAYOUT SECTIONS
-// ========================================
-
+// Highlight Section Component
 .highlight {
   background: $color-accent;
   padding: $space-lg;
@@ -430,9 +449,7 @@ button {
     font-weight: $font-semibold;
   }
 
-  p {
-    margin: 0;
-  }
+  p { margin: 0; }
 
   .checkout-button {
     border-bottom: none;
@@ -441,8 +458,8 @@ button {
     color: $color-background;
     font-size: inherit;
     font-family: inherit;
-    margin: $space-base 0 $space-md 0;
-    padding: $space-sm $space-base calc($space-sm + 0.1rem) $space-base;
+    margin: $space-base 0 $space-md;
+    padding: $space-sm $space-base calc($space-sm + 0.1rem);
     border-radius: $radius-base;
 
     &:hover {
@@ -457,45 +474,7 @@ button {
   }
 }
 
-figure,
-.img-container,
-img {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: $radius-sm;
-}
-
-img {
-  &.banner {
-    border-radius: 0;
-    aspect-ratio: 64 / 27;
-    object-fit: cover;
-    object-position: 100% 50%;
-    position: sticky;
-    z-index: -1;
-    top: 0;
-  }
-}
-
-footer p, small {
-  font-weight: $font-light;
-  font-size: 0.7937rem;
-}
-
-footer {
-  opacity: 75%;
-  margin-bottom: 0;
-  stong {
-    font-weight: $font-medium;
-  }
-  * {
-    margin-bottom: $space-sm;
-  }
-}
-
+// Event Details Component
 .eventdetails {
   display: flex;
   flex-direction: column;
@@ -518,21 +497,84 @@ footer {
   }
 }
 
-// ========================================
-// ICONS & GRAPHICS
-// ========================================
+// Content Wrapper Component
+.content-wrapper {
+  background-color: $color-background;
+  border-top: $focus-width solid $color-text;
 
-.icon {
-  min-width: 1rem;
-  max-width: 1rem;
-  height: auto;
-  stroke: #333333; // Improved contrast
+  header {
+    img {
+      margin: -$space-3xl 0 $space-2xl -5px;
+      width: calc($space-xl * 10);
+      height: auto;
+      
+      &.homepage-logo {
+        margin: 0 0 $space-md 0;
+        width: calc($space-xl * 6);
+      }
+    }
+    
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Directory Components
+.dir-container {
+  padding: 2rem !important;
+  iframe {
+    border: 1px solid $color-border;
+    border-radius: $radius-base;
+  }
+}
+
+.dir-actions > ul li {
+  margin-bottom: $space-sm;
 }
 
 // ========================================
-// ACCESSIBILITY FEATURES
+// UTILITIES
 // ========================================
 
+// Layout utilities
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.short-width {
+  max-width: clamp(26rem, 1vw + 1rem, 30rem);
+}
+
+.medium-width {
+  max-width: clamp(40rem, 2vw + 1rem, 50rem);
+}
+
+// Spacing utilities
+.pad-top {
+  padding-top: $space-2xl;
+}
+
+.pad-sides {
+  padding-right: clamp(0px, calc(#{$space-base} - (100vw - 320px) * 0.1), #{$space-base});
+  padding-left: clamp(0px, calc(#{$space-base} - (100vw - 320px) * 0.1), #{$space-base});
+}
+
+.pad-bottom {
+  padding-bottom: $space-xl;
+}
+
+// Border utilities
+.no-border {
+  border: none;
+}
+
+// ========================================
+// ACCESSIBILITY
+// ========================================
+
+// Skip link
 .skip-link {
   position: absolute;
   top: -2.5rem;
@@ -554,12 +596,6 @@ footer {
   }
 }
 
-// Enhanced focus indicators
-button:focus {
-  outline: $focus-width solid $color-focus;
-  outline-offset: $focus-offset;
-}
-
 // Screen reader only utility
 .sr-only {
   position: absolute;
@@ -573,44 +609,9 @@ button:focus {
   border: 0;
 }
 
-.content-wrapper {
-  background-color: $color-background;
-  border-top: $focus-width solid $color-text;
-
-  header img {
-    margin: -$space-3xl 0 $space-2xl -5px;
-    width: calc($space-xl * 10);
-    height: auto;
-  }
-
-  header img.homepage-logo {
-    margin: 0 0 $space-md 0;
-    width: calc($space-xl * 6);
-  }
-
-  header p:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-.no-border {
-  border: none;
-}
-
 // ========================================
-// MEDIA QUERIES
+// MEDIA QUERIES & RESPONSIVE
 // ========================================
-
-// High contrast mode support
-@media (prefers-contrast: high) {
-  .icon {
-    stroke: $color-black;
-  }
-
-  .mybutton:focus {
-    outline: 0.1875rem solid $color-black; // 3px
-  }
-}
 
 // Hover states - only for devices that can hover
 @media (hover: hover) and (pointer: fine) {
@@ -628,6 +629,18 @@ button:focus {
   }
 }
 
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .icon {
+    stroke: $color-black;
+  }
+
+  .mybutton:focus {
+    outline: 0.1875rem solid $color-black; // 3px
+  }
+}
+
+// High contrast with hover
 @media (hover: hover) and (pointer: fine) and (prefers-contrast: high) {
   .mybutton:hover {
     outline: 0.1875rem solid $color-black; // 3px
