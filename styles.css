@@ -374,7 +374,7 @@ img.banner {
 .highlight {
   background: #ffe9d0;
   padding: 1.618rem;
-  border-radius: 0.25rem;
+  border-radius: 0.618rem;
   margin-bottom: 2.618rem;
 }
 .highlight h2 {
@@ -393,11 +393,11 @@ img.banner {
   font-size: inherit;
   font-family: inherit;
   margin: 1rem 0 0.625rem;
-  padding: 0.375rem 1rem 0.475rem;
-  border-radius: 0.618rem;
+  padding: 0.375rem 1rem;
+  border-radius: 0.25rem;
 }
 .highlight .checkout-button:hover {
-  background: #00a8cf;
+  background: rgba(68, 68, 68, 0.8);
   color: hsl(0, 0%, 98%);
 }
 .highlight small {

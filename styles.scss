@@ -462,7 +462,7 @@ img.banner {
 .highlight {
   background: $color-accent;
   padding: $space-lg;
-  border-radius: $radius-sm;
+  border-radius: $radius-base;
   margin-bottom: $space-2xl;
 
   h2 {
@@ -483,11 +483,11 @@ img.banner {
     font-size: inherit;
     font-family: inherit;
     margin: $space-base 0 $space-md;
-    padding: $space-sm $space-base calc($space-sm + 0.1rem);
-    border-radius: $radius-base;
+    padding: $space-sm $space-base;
+    border-radius: $radius-sm;
 
     &:hover {
-      background: $color-primary;
+      background: rgba($color-text, 0.8);
       color: $color-background;
     }
   }
