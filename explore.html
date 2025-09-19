@@ -22,7 +22,7 @@
     <meta name="author" content="Folks Directory" />
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:url" content="https://folks.directory/directory" />
+    <meta property="og:url" content="https://folks.directory/explore" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Explore Folks Directory" />
     <meta
@@ -56,13 +56,13 @@
     <!-- Top Header Content -->
     <div class="content-wrapper no-border pad-sides pad-bottom pad-top">
       <header class="short-width center">
-        <img
+        <a href="/"><img
           src="folks directory.svg"
           class="homepage-logo pad-top pad-bottom"
           alt="folks directory logo"
           height="684"
           width="1025"
-        />
+        /></a>
       </header>
 
       <main class="pad-top" id="main-content">
@@ -74,11 +74,12 @@
             >
           </p>
           <p>
-            Below you'll find dozens of makers, artists, writers,
-            designers, and crafters who live and work in this corner of Kent.
-            Filter by expertise, search
+            Below you'll find dozens of makers, artists, writers, designers, and
+            crafters who live and work in this corner of Kent. Filter by
+            expertise, search
             <span class="rotated-icon">&#9906;</span>
-            for what you need, and click any profile to learn more and reach out. People are ordered by most recently added.
+            for what you need, and click any profile to learn more and reach
+            out. People are ordered by most recently added.
           </p>
         </section>
 
@@ -152,7 +153,6 @@
       </main>
 
       <footer class="short-width center pad-top">
-        <section>
           <p><strong>Proudly independent</strong></p>
           <p>
             Folks Directory is Folkestone's growing yellow pages for creative
@@ -165,13 +165,18 @@
               >folksdirectory@gmail.com</a
             >
           </p>
-          <p>
+          <p style="margin-top: 1rem">
             <a href="/">← Back home</a> |
-            <a href="mailto:folksdirectory@gmail.com">Contact us</a> |
-            <a href="/policy.html">Privacy Policy</a>
+            <a href="/policy.html">Privacy Policy</a> |
+            <a href="https://airtable.com/appftAzWfZUvVVuJj/pagxtnf48FNoayS4o/form">Join the directory</a>
           </p>
-        </section>
       </footer>
     </div>
+
+    <nav class="floating-nav" aria-label="Site navigation">
+      <a href="/">Home</a>
+      <a href="/explore.html" aria-current="page">Directory</a>
+      <a href="/skills4folks.html">Events</a>
+    </nav>
   </body>
 </html>
