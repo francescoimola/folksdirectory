@@ -47,6 +47,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="banner_s4f.jpg" fetchpriority="high" />
   </head>
 
   <body>
@@ -54,10 +57,12 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <img
-      src="banner_s4f.png"
+      src="banner_s4f.jpg"
       class="banner"
-      alt="Four young people sat on a wall looking at the sky"
-      loading="lazy"
+      alt="Skills 4 Folks event banner"
+      width="1920"
+      height="810"
+      loading="eager"
     />
 
     <!-- Top Header Content -->
@@ -65,9 +70,10 @@
       <header class="short-width center">
         <img
           src="vector s4f logo.png"
-          alt="skills for folks logo"
-          height="684"
+          alt="Skills 4 Folks logo"
           width="1025"
+          height="684"
+          loading="lazy"
         />
       </header>
 
@@ -110,7 +116,7 @@
           </li>
         </ul>
 
-        <section class="highlight" id="main-content">
+        <section class="highlight margin-bottom-2xl" id="main-content">
           <h2>In short</h2>
           <p>
             Three social walks happening in Folkestone every last
@@ -181,45 +187,6 @@
           </p>
           <p>It's for this reason that we're centring the walks around it. After all, collaboration and helping to build a stronger creative community is what <a href="/">the directory</a> is all about. </p>
 
-          <h2>Facilitators</h2>
-          <p>
-            Sangmin, Stephen and Francesco are the collective behind Folks
-            Directory, Folkestone's growing yellow pages for artists and
-            creatives. What links them is a shared backgrounds in making art,
-            facilitating creative work and organising grassroots events.
-          </p>
-          <p>
-            Sangmin is a curator and project manager with seven years of
-            cross-cultural experience,
-            <a
-              href="https://magiccarpets.eu/curators/sangmin-cha/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >recently boosting Folkestone's art scene</a
-            >. Sangmin has loads of curly hair.
-          </p>
-          <p>
-            Francesco is
-            <a
-              href="https://nevernotready.club/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >a designer at heart</a
-            >, but you can often find him building bridges across the murky,
-            murky waters of marketing, strategy, and project facilitation.
-          </p>
-          <p>
-            Stephen is to blame for all the
-            <a
-              href="https://www.instagram.com/stephen_fp_/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >crocodiles, tigers and mini golf experiences</a
-            >
-            you've probably seen or heard about in the last few years. He also
-            teaches art and organises the Canterbury Exposure Open Mic.
-          </p>
-
           <h2>Thanks</h2>
           <p>
             These events are part of the 2025 edition of
@@ -241,7 +208,7 @@
             We are Folkestone's growing yellow pages for creative talent. A not-for-profit common good since 2024.
           </p>
           <p>
-            <a href="/policy.html" aria-label="Learn how Folks Directory collects, uses, and protects your information.">Privacy Policy</a>, <a href="mailto:folksdirectory@gmail.com">Contact us</a>, <a href="https://forms.gle/WPD1qBayDwzD6YH9A">Join the directory</a>, <a href="/">Homepage</a>
+            <a href="/policy.html" aria-label="Learn how folks.directory collects, uses, and protects your information.">Privacy Policy</a>, <a href="mailto:folksdirectory@gmail.com">Contact us</a>, <a href="https://forms.gle/WPD1qBayDwzD6YH9A">Join the directory</a>, <a href="/">Homepage</a>
           </p>
       </footer>
     </div>
@@ -249,7 +216,9 @@
     <nav class="floating-nav" aria-label="Site navigation">
       <a href="/">Home</a>
       <a href="/explore.html">Directory</a>
-      <a href="/skills4folks.html" aria-current="page">Events</a>
+      <a href="/events.html">Events</a>
+      <a href="/about.html">About</a>
     </nav>
+    <script src="unorphanize.js"></script>
   </body>
 </html>

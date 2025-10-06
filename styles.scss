@@ -13,6 +13,9 @@ $space-2xl: 2.618rem; // 42px
 $space-3xl: 4rem; // 64px
 $space-4xl: 7rem; // 112px
 
+$medium-w: clamp(40rem, 2vw + 1rem, 50rem);
+$short-w: clamp(26rem, 1vw + 1rem, 30rem);
+
 // Border radius scale
 $radius-sm: 0.25rem; // 4px
 $radius-base: 0.618rem; // Golden ratio base
@@ -237,8 +240,10 @@ h2,
 h3 {
   font-size: 1.5874rem;
   font-weight: $font-medium;
-  margin: $space-lg 0 $space-xs;
+  line-height: 1.3;
+  margin: $space-lg 0 $space-md 0;
   letter-spacing: -0.03rem;
+  text-wrap: balance;
 }
 
 p {
@@ -263,8 +268,7 @@ i {
 }
 
 small,
-footer p,
-.dir-intro p {
+footer p {
   font-weight: $font-light;
   font-size: 0.7937rem;
 }
@@ -463,7 +467,6 @@ img.banner {
   background: $color-accent;
   padding: $space-lg;
   border-radius: $radius-base;
-  margin-bottom: $space-2xl;
 
   h2 {
     font-size: 1rem;
@@ -495,6 +498,31 @@ img.banner {
   small {
     display: inline-block;
     opacity: 90%;
+  }
+}
+
+// Usage Grid Component - side by side on desktop, stacked on mobile
+.usage-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: $space-md;
+  padding-inline: $space-2xl;
+
+  @media (max-width: 500px) {
+    padding-inline: revert;
+  }
+
+  .highlight {
+    flex: 1 1 calc(50% - $space-md);
+    min-width: 300px;
+    max-width: 400px;
+
+    p:first-child {
+      margin-bottom: $space-md;
+    }
   }
 }
 
@@ -609,11 +637,11 @@ nav.floating-nav {
 }
 
 .short-width {
-  max-width: clamp(26rem, 1vw + 1rem, 30rem);
+  max-width: $short-w;
 }
 
 .medium-width {
-  max-width: clamp(40rem, 2vw + 1rem, 50rem);
+  max-width: $medium-w;
 }
 
 // Spacing utilities
@@ -636,6 +664,10 @@ nav.floating-nav {
 
 .pad-bottom {
   padding-bottom: $space-xl;
+}
+
+.margin-bottom-2xl {
+  margin-bottom: $space-2xl;
 }
 
 // Border utilities

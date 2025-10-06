@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1.0"
     />
-    <title>folks directory</title>
-    <meta name="title" content="Folks Directory" />
+    <title>folks.directory</title>
+    <meta name="title" content="folks.directory" />
     <meta
       name="description"
       content="We are Folkestone's growing yellow pages for creative talent. A not-for-profit common good since 2024."
@@ -19,12 +19,12 @@
     <meta name="robots" content="index, follow" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="English" />
-    <meta name="author" content="Francesco Imola and Folks Directory" />
+    <meta name="author" content="Francesco Imola and folks.directory" />
 
     <!-- Social Media Meta Tags -->
     <meta property="og:url" content="https://folks.directory/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="folks directory" />
+    <meta property="og:title" content="folks.directory" />
     <meta
       property="og:description"
       content="Folkestone's growing yellow pages for artists and creatives."
@@ -47,6 +47,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="banner.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="folks.svg" />
   </head>
 
   <body>
@@ -57,7 +61,9 @@
       src="banner.jpg"
       class="banner homepage-banner"
       alt="Four young people sat on a wall looking at the sky"
-      loading="lazy"
+      width="1920"
+      height="810"
+      loading="eager"
     />
 
     <!-- Top Header Content -->
@@ -72,9 +78,7 @@
         />
 
         <p>
-          Folkestone is home to hundreds of brilliant creative people.
-          Producers, artists, writers, chefs, designers and crafters. Too many
-          to count.
+          Folkestone is home to hundreds of brilliant creatives. Designers, artists, chefs, crafters, the list goes on.
         </p>
 
         <p>
@@ -179,10 +183,11 @@
       <footer class="short-width center pad-sides pad-top pad-bottom">
           <p><strong>Proudly independent</strong></p>
           <p>
-            We are Folkestone's growing yellow pages for creative talent. A not-for-profit common good since 2024.
+            A free, public directory of creatives who live or work in Folkestone. Built with ♥ by Folkestonians, for
+        Folkestonians.
           </p>
           <p>
-            <a href="/policy.html" aria-label="Learn how Folks Directory collects, uses, and protects your information.">Privacy Policy</a>, <a href="mailto:folksdirectory@gmail.com">Contact us</a>, <a href="https://airtable.com/appftAzWfZUvVVuJj/pagxtnf48FNoayS4o/form">Join the directory</a>
+            <a href="/policy.html" aria-label="Learn how folks.directory collects, uses, and protects your information.">Privacy Policy</a>, <a href="mailto:folksdirectory@gmail.com">Contact us</a>, <a href="https://airtable.com/appftAzWfZUvVVuJj/pagxtnf48FNoayS4o/form">Join the directory</a>
           </p>
       </footer>
     </div>
@@ -190,7 +195,9 @@
     <nav class="floating-nav" aria-label="Site navigation">
       <a href="/" aria-current="page">Home</a>
       <a href="/explore.html">Directory</a>
-      <a href="/skills4folks.html">Events</a>
+      <a href="/events.html">Events</a>
+      <a href="/about.html">About</a>
     </nav>
+    <script src="unorphanize.js"></script>
   </body>
 </html>
