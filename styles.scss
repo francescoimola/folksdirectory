@@ -715,6 +715,114 @@ nav.floating-nav {
 }
 
 // ========================================
+// FORMS
+// ========================================
+
+.form-container {
+  max-width: $short-w;
+  margin: 0 auto;
+}
+
+.form-field {
+  margin-bottom: $space-base;
+
+  label {
+    display: block;
+    margin-bottom: $space-sm;
+    font-weight: $font-medium;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: $space-md + $space-xs;
+    border: $focus-width solid $color-text;
+    border-radius: $radius-sm;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    font-size: $space-base;
+    background: $color-background;
+    transition: all $transition-normal;
+
+    &:focus {
+      outline: $focus-width solid $color-focus;
+      outline-offset: $focus-offset;
+      border-color: $color-focus;
+    }
+  }
+
+  &.checkbox-field {
+    label {
+      font-weight: $font-light;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: $space-md 0 0 0;
+      line-height: 1.5;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      cursor: pointer;
+      margin-right: $space-sm;
+      flex-shrink: 0;
+
+      &:focus {
+        outline: $focus-width solid $color-focus;
+        outline-offset: $focus-offset;
+      }
+    }
+  }
+}
+
+.submit-button {
+  width: 100%;
+  background: $color-accent;
+  border: $focus-width solid transparent;
+  padding: $space-md + $space-xs $space-lg;
+  border-radius: $radius-base;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-size: $space-base;
+  font-weight: $font-medium;
+  cursor: pointer;
+  transition: all $transition-normal;
+  margin-top: $space-md;
+
+  &:hover {
+    background: $color-surface;
+    outline: $focus-width solid $color-black;
+    outline-offset: $focus-offset;
+  }
+
+  &:focus {
+    outline: $focus-width solid $color-focus;
+    outline-offset: $focus-offset;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.form-message {
+  padding: $space-base;
+  border-radius: $radius-sm;
+  margin-bottom: $space-base;
+  display: none;
+
+  &.success {
+    background: #d4edda;
+    border: $focus-width solid #28a745;
+    display: block;
+  }
+
+  &.error {
+    background: #f8d7da;
+    border: $focus-width solid #dc3545;
+    display: block;
+  }
+}
+
+// ========================================
 // MEDIA QUERIES & RESPONSIVE
 // ========================================
 
