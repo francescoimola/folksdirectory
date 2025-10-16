@@ -732,8 +732,7 @@ nav.floating-nav {
     font-weight: $font-medium;
   }
 
-  input[type="text"],
-  input[type="email"] {
+  input {
     width: 100%;
     padding: $space-md + $space-xs;
     border: $focus-width solid $color-text;
